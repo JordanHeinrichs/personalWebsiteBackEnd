@@ -18,7 +18,7 @@ describe('GET /signup', () => {
 });
 
 describe('GET /signup', () => {
-  it('should return 200 OK', (done) => {
+  it('should return 404', (done) => {
     request(app)
       .get('/project/junk-name')
       .expect(404, done);
