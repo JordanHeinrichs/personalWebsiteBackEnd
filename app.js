@@ -9,6 +9,7 @@ const chalk = require('chalk');
 const errorHandler = require('errorhandler');
 const expressValidator = require('express-validator');
 const expressStatusMonitor = require('express-status-monitor');
+const cors = require('cors');
 
 /**
  * Controllers (route handlers).
@@ -25,6 +26,9 @@ const app = express();
  * Express configuration.
  */
 app.set('port', process.env.PORT || 4000);
+app.use(cors({
+  exposedHeaders: ["Link"]
+}));
 app.use(expressStatusMonitor());
 app.use(compression());
 app.use(logger('dev'));
@@ -37,6 +41,8 @@ app.use(expressValidator());
  */
 app.get('/projects', blogs.getProjectList);
 app.get('/project/:name', blogs.getProject);
+app.get('/hobbies', blogs.getHobbyList);
+app.get('/hobby/:name', blogs.getHobby);
 
 /**
  * Error Handler.
