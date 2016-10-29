@@ -1,12 +1,12 @@
 <h3>Solar Car</h3>
 The <a href="http://www.calgarysolarcar.ca/">Solar Car Team</a> is a team dedicated to designing and racing cars powered off the Sun. I have been a part of the team since Fall 2013 working as a software developer for the car's embedded systems as well as the real time telemetry application. I was the lead software developer on the team from 2013 to August 2015.
 
-<a href="http://www.calgarysolarcar.ca/"><img src="http://suntzu:4000/img/SolarCarTeam.jpg" alt="" width="411" height="274" /></a> 
+<img src="http://suntzu:4000/img/SolarCarTeam.jpg" alt="" width="411" height="274" /></a> 
 Solar Car Team at FSGP 2015
 
 The embedded system I was working with was the <a href="https://developer.mbed.org/platforms/mbed-LPC1768/">ARM mbed LPC1768</a>. It communicated to the <a href="http://tritium.com.au/products/wavesculptor22-motor-inverter/">Tritium motor controllers</a> and battery monitoring system via CAN. It also periodically read in the driver controls and updated three char OLED displays over SPI. To communicate with the base station monitoring the telemetry it used an XBee 900 mHz radio via UART. The code for this project can be found <a href="https://github.com/UCSolarCarTeam/Schulich-Delta-CCS-2">here</a>.
 
-<a href="http://www.calgarysolarcar.ca/"><img src="http://suntzu:4000/img/SolarCarOLED.jpg" alt="" width="700" height="525" /></a> The ARM mbed with the XBee radio and dashboard while testing
+<img src="http://suntzu:4000/img/SolarCarOLED.jpg" alt="" width="700" height="525" /></a> The ARM mbed with the XBee radio and dashboard while testing
 
 The telemetry monitoring program was built in C++ with the QT framework for the GUI. The program received the telemetry through another XBee 900 mHz radio and parse then display the information. In order to display the telemetry on multiple computers the program that was connected to the radio would automatically forward all packets to a UDP multicast address so that anyone on the network can receive updates. The telemetry program is shown below and the code for it is available <a href="https://github.com/UCSolarCarTeam/Schulich-Delta-Telemetry">here</a>.
 
