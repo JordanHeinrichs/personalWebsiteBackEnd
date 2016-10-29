@@ -45,6 +45,11 @@ app.get('/hobbies', blogs.getHobbyList);
 app.get('/hobby/:name', blogs.getHobby);
 
 /**
+ * Static serving for images
+ */
+app.use( '/img', express.static(__dirname + '/assets'));
+
+/**
  * Error Handler.
  */
 app.use(errorHandler());
