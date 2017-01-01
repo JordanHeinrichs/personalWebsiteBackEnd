@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "node app.js",
-    "test": "mocha --reporter spec --timeout 5000"
+    "test": "mocha --reporter spec --timeout 5000",
+    "build-docker": "docker build --rm -t backend:latest ."
   },
   "dependencies": {
     "async": "^2.0.1",
